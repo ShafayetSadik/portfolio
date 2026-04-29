@@ -13,21 +13,21 @@ export function PublicationsSection() {
       <div className="grid gap-4 lg:grid-cols-2">
         {publicationsContent.items.map((publication, index) => (
           <Reveal key={publication.title} delay={index * 0.06}>
-            <article className="surface-panel flex h-full flex-col justify-between p-6 sm:p-8">
+            <article className="surface-panel noise-outline flex h-full flex-col justify-between rounded-2xl p-6 sm:p-8">
               <div>
-                <p className="text-xs font-medium uppercase tracking-[0.3em] text-muted">
+                <span className="inline-flex items-center rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
                   Publication
-                </p>
-                <h3 className="mt-3 text-base font-semibold leading-snug text-fg sm:text-lg">
+                </span>
+                <h3 className="mt-4 text-base font-semibold leading-snug text-fg sm:text-lg">
                   {publication.title}
                 </h3>
               </div>
               <div className="mt-6 flex flex-wrap items-center gap-2">
-                <span className="bg-surface px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
+                <span className="rounded-md border border-border/50 bg-surface/50 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-muted">
                   {publication.venue}
                 </span>
                 {publication.status ? (
-                  <span className="bg-fg px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-bg">
+                  <span className="rounded-md bg-accent/15 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-accent">
                     {publication.status}
                   </span>
                 ) : null}

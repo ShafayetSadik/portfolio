@@ -45,26 +45,26 @@ export function NavClient({ name, email, sections }: NavClientProps) {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-bg/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4 sm:px-8">
+      <header className="fixed inset-x-0 top-0 z-40 px-4 pt-4 sm:px-6">
+        <div className="mx-auto flex max-w-content items-center justify-between rounded-full border border-border/50 bg-bg/75 px-5 py-3 backdrop-blur-xl">
           <button
             type="button"
             onClick={() => scrollToSection("hero")}
-            className="text-sm font-semibold text-fg transition-colors duration-200 hover:text-muted"
+            className="text-sm font-semibold text-fg transition-colors duration-200 hover:text-accent"
           >
             {name}
           </button>
 
-          <nav className="hidden items-center gap-7 md:flex">
+          <nav className="hidden items-center gap-1 md:flex">
             {sections.map((section) => (
               <button
                 key={section.id}
                 type="button"
                 onClick={() => scrollToSection(section.id)}
                 className={cn(
-                  "text-sm transition-colors duration-200",
+                  "rounded-full px-3.5 py-1.5 text-sm transition-colors duration-200",
                   activeSection === section.id
-                    ? "font-medium text-fg"
+                    ? "bg-accent/15 text-accent"
                     : "text-muted hover:text-fg",
                 )}
               >
@@ -76,19 +76,20 @@ export function NavClient({ name, email, sections }: NavClientProps) {
           <div className="hidden md:block">
             <a
               href={`mailto:${email}`}
-              className="text-sm text-muted transition-colors duration-200 hover:text-fg"
+              className="inline-flex items-center gap-2 rounded-full border border-border/50 px-3.5 py-1.5 text-sm text-muted transition-colors duration-200 hover:border-border hover:text-fg"
             >
+              <Mail className="h-3.5 w-3.5" />
               {email}
             </a>
           </div>
 
           <button
             type="button"
-            className="inline-flex h-9 w-9 items-center justify-center text-muted transition-colors duration-200 hover:text-fg md:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/50 text-muted transition-colors duration-200 hover:text-fg md:hidden"
             aria-label="Open navigation menu"
             onClick={() => setMenuOpen(true)}
           >
-            <Menu className="h-5 w-5" />
+            <Menu className="h-4 w-4" />
           </button>
         </div>
       </header>

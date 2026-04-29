@@ -15,22 +15,18 @@ export function ProjectsSection() {
       <div className="space-y-4">
         {projectsContent.items.map((project, index) => (
           <Reveal key={project.id} delay={index * 0.08}>
-            <article className="surface-panel p-6 sm:p-8">
+            <article className="surface-panel noise-outline rounded-2xl p-6 sm:p-8 transition-colors duration-200 hover:border-border">
               <div className="flex flex-wrap items-center gap-3">
-                <span className="font-mono text-xs text-muted">
-                  {project.year}
-                </span>
-                <span className="text-border" aria-hidden="true">/</span>
-                <div className="flex flex-wrap gap-1.5">
+                <span className="font-mono text-xs text-muted">{project.year}</span>
+                <span className="text-border">·</span>
+                <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <Tag key={`${project.id}-${tag}`}>{tag}</Tag>
                   ))}
                 </div>
               </div>
 
-              <h3 className="mt-5 text-xl font-semibold text-fg">
-                {project.title}
-              </h3>
+              <h3 className="mt-5 text-xl font-semibold text-fg">{project.title}</h3>
               <p className="mt-2 max-w-2xl text-base leading-7 text-muted">
                 {project.description}
               </p>
@@ -41,7 +37,7 @@ export function ProjectsSection() {
                     href={project.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center bg-fg px-4 py-2 text-sm font-medium text-bg transition-opacity duration-200 hover:opacity-70"
+                    className="inline-flex items-center rounded-full bg-accent px-4 py-2 text-sm font-medium text-white transition-all duration-200 hover:bg-accent/90"
                   >
                     Visit project
                     <ArrowUpRight className="ml-1.5 h-3.5 w-3.5" />
@@ -52,7 +48,7 @@ export function ProjectsSection() {
                     href={project.repository}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center border border-border px-4 py-2 text-sm text-fg transition-colors duration-200 hover:text-muted"
+                    className="inline-flex items-center rounded-full border border-border/50 bg-surface/50 px-4 py-2 text-sm text-fg backdrop-blur-sm transition-colors duration-200 hover:border-border hover:bg-surface"
                   >
                     Source
                     <CodeXml className="ml-1.5 h-3.5 w-3.5" />

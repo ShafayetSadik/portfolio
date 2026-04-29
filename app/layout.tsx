@@ -16,7 +16,7 @@ const bodyFont = Inter({
 const displayFont = Plus_Jakarta_Sans({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const monoFont = IBM_Plex_Mono({

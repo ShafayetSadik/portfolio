@@ -11,7 +11,7 @@ export function AboutSection() {
       title={aboutContent.title}
       intro={aboutContent.intro}
     >
-      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-5">
           {aboutContent.body.map((paragraph, index) => (
             <Reveal key={paragraph} delay={index * 0.1}>
@@ -22,14 +22,14 @@ export function AboutSection() {
           ))}
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-2">
           {aboutContent.stats.map((stat, index) => (
             <Reveal key={stat.label} delay={index * 0.08}>
-              <div className="surface-panel p-6">
-                <p className="text-3xl font-semibold text-fg sm:text-4xl">
+              <div className="surface-panel noise-outline rounded-2xl p-6">
+                <p className="text-3xl font-bold text-fg sm:text-4xl">
                   <Counter value={stat.value} suffix={stat.suffix} />
                 </p>
-                <p className="mt-2 text-sm leading-6 text-muted">{stat.label}</p>
+                <p className="mt-2 text-sm text-muted">{stat.label}</p>
               </div>
             </Reveal>
           ))}

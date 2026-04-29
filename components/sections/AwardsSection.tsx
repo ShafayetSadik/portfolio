@@ -13,9 +13,11 @@ export function AwardsSection() {
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {awardsContent.items.map((award, index) => (
           <Reveal key={`${award.title}-${award.year}`} delay={index * 0.06}>
-            <article className="surface-panel h-full p-6">
-              <p className="font-mono text-xs text-muted">{award.year}</p>
-              <h3 className="mt-3 text-base font-semibold leading-snug text-fg">
+            <article className="surface-panel noise-outline h-full rounded-2xl p-6">
+              <span className="inline-flex items-center rounded-full border border-accent/25 bg-accent/10 px-2.5 py-0.5 font-mono text-[10px] font-medium text-accent">
+                {award.year}
+              </span>
+              <h3 className="mt-4 text-base font-semibold leading-snug text-fg">
                 {award.title}
               </h3>
               <p className="mt-2 text-sm text-muted">{award.organization}</p>

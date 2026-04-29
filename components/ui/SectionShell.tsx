@@ -30,30 +30,32 @@ export function SectionShell({
     <section
       id={id}
       className={cn(
-        "scroll-mt-20 border-t border-border px-6 py-20 sm:px-8 lg:px-12 lg:py-32",
+        "scroll-mt-20 px-6 py-20 sm:px-8 lg:px-12 lg:py-28",
         className,
       )}
     >
       <div className="mx-auto flex max-w-content flex-col gap-12">
-        <div className="max-w-2xl space-y-4">
-          <p className="text-xs font-medium uppercase tracking-[0.3em] text-muted">
-            {label}
-          </p>
+        <div className="max-w-2xl space-y-5">
+          <div>
+            <span className="inline-flex items-center rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+              {label}
+            </span>
+          </div>
           <Heading
             className={cn(
-              "font-serif text-3xl font-semibold leading-tight text-fg sm:text-4xl lg:text-5xl",
+              "font-serif text-4xl font-bold tracking-tight text-fg sm:text-5xl",
               headingClassName,
             )}
           >
             {title}
           </Heading>
           {intro ? (
-            <p className="pt-2 text-base leading-8 text-muted sm:text-lg">
+            <p className="text-base leading-8 text-muted sm:text-lg">
               {intro}
             </p>
           ) : null}
         </div>
-        <div className={cn("flex flex-col gap-6", contentClassName)}>
+        <div className={cn("flex flex-col gap-5", contentClassName)}>
           {children}
         </div>
       </div>
