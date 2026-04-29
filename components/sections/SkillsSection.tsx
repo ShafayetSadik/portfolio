@@ -15,8 +15,10 @@ export function SkillsSection() {
         {skillsContent.groups.map((group, index) => (
           <Reveal key={group.title} delay={index * 0.08}>
             <article className="surface-panel noise-outline p-6 sm:p-8">
-              <div className="mb-6">
-                <h3 className="font-serif text-2xl text-fg">{group.title}</h3>
+              <div className="mb-6 border-b border-border pb-6">
+                <h3 className="font-serif text-2xl italic text-fg">
+                  {group.title}
+                </h3>
                 <p className="mt-3 max-w-lg text-sm leading-7 text-muted">
                   {group.summary}
                 </p>

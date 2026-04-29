@@ -30,33 +30,27 @@ export function SectionShell({
     <section
       id={id}
       className={cn(
-        "scroll-mt-24 border-t border-border px-6 py-[60px] sm:px-8 lg:px-12 lg:py-[100px]",
+        "scroll-mt-20 border-t-2 border-fg px-6 py-[60px] sm:px-8 lg:px-12 lg:py-[100px]",
         className,
       )}
     >
       <div className="mx-auto flex max-w-content flex-col gap-10">
-        <div className="flex max-w-3xl flex-col gap-5">
-          <p className="font-serif text-xs italic tracking-[0.18em] text-muted">
-            {label}
-          </p>
+        <div className="flex max-w-4xl flex-col">
+          <div className="flex items-center border-b border-border pb-3">
+            <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-muted">
+              {label}
+            </p>
+          </div>
           <Heading
             className={cn(
-              "font-serif text-4xl leading-tight tracking-tightest text-fg sm:text-5xl lg:text-6xl",
+              "mt-8 font-serif text-5xl italic leading-[1.1] text-fg sm:text-6xl lg:text-7xl",
               headingClassName,
             )}
           >
             {title}
           </Heading>
-          <div
-            className="flex items-center gap-2"
-            aria-hidden="true"
-          >
-            <span className="accent-divider h-px w-10" />
-            <span className="text-[8px] text-accent">◆</span>
-            <span className="accent-divider h-px w-10" />
-          </div>
           {intro ? (
-            <p className="max-w-2xl text-base leading-8 text-muted sm:text-lg">
+            <p className="mt-8 max-w-2xl border-t border-border pt-6 text-base leading-8 text-muted sm:text-lg">
               {intro}
             </p>
           ) : null}

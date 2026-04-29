@@ -3,10 +3,10 @@ import type { Theme } from "@/lib/types";
 export const THEME_STORAGE_KEY = "portfolio:theme";
 
 export const defaultTheme: Theme = {
-  bg: "#F5E6C8",
-  fg: "#1C1108",
-  muted: "#6B5540",
-  accent: "#8C3A1E",
-  surface: "#EDD9B0",
-  border: "#C4A876",
+  bg: "#FAFAF7",
+  fg: "#0D0D0B",
+  muted: "#6B6860",
+  accent: "#CC0000",
+  surface: "#F2F0EB",
+  border: "#0D0D0B",
 };

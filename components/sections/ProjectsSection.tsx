@@ -12,28 +12,30 @@ function ProjectPreview({
   metrics: { label: string; value: string }[];
 }) {
   return (
-    <div className="surface-panel p-5">
+    <div className="border border-border bg-surface p-5">
       <div className="grid-backdrop border border-border p-4">
-        <div className="flex items-center justify-between">
-          <p className="font-mono text-xs uppercase tracking-[0.24em] text-muted">
+        <div className="flex items-center justify-between border-b border-border pb-3">
+          <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-muted">
             Preview
           </p>
-          <span className="border border-border px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
+          <span className="bg-accent px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.18em] text-bg">
             System
           </span>
         </div>
-        <div className="mt-6 space-y-3">
-          <div className="accent-wash h-16 border border-border" />
+        <div className="mt-4 space-y-3">
+          <div className="accent-wash h-14 border border-border" />
           <div className="grid gap-3 sm:grid-cols-3">
             {metrics.map((metric) => (
               <div
                 key={`${title}-${metric.label}`}
-                className="surface-panel p-4"
+                className="border border-border bg-bg p-4"
               >
-                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+                <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-muted">
                   {metric.label}
                 </p>
-                <p className="mt-2 text-lg text-fg">{metric.value}</p>
+                <p className="mt-2 font-serif italic text-lg text-fg">
+                  {metric.value}
+                </p>
               </div>
             ))}
           </div>
@@ -57,11 +59,11 @@ export function ProjectsSection() {
             <article className="surface-panel noise-outline p-6 sm:p-8">
               <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
                 <div>
-                  <div className="flex flex-wrap items-center gap-3">
-                    <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted">
+                  <div className="flex flex-wrap items-center gap-3 border-b border-border pb-4">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-muted">
                       {project.year}
                     </p>
-                    <span className="h-px w-8 bg-border" aria-hidden="true" />
+                    <span className="h-px w-6 bg-border" aria-hidden="true" />
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
                         <Tag key={`${project.id}-${tag}`}>{tag}</Tag>
@@ -69,7 +71,7 @@ export function ProjectsSection() {
                     </div>
                   </div>
 
-                  <h3 className="mt-6 font-serif text-3xl text-fg sm:text-4xl">
+                  <h3 className="mt-6 font-serif text-3xl italic text-fg sm:text-4xl">
                     {project.title}
                   </h3>
                   <p className="mt-4 max-w-2xl text-lg leading-8 text-fg">
@@ -85,7 +87,7 @@ export function ProjectsSection() {
                         href={project.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center bg-accent px-5 py-3 text-sm text-bg transition-colors duration-300 hover:bg-fg hover:text-bg"
+                        className="inline-flex items-center bg-accent px-5 py-3 text-sm font-medium text-bg transition-colors duration-200 hover:bg-fg"
                       >
                         Visit project
                         <ArrowUpRight className="ml-2 h-4 w-4" />
@@ -96,7 +98,7 @@ export function ProjectsSection() {
                         href={project.repository}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center border border-border px-5 py-3 text-sm text-fg transition-colors duration-300 hover:text-accent"
+                        className="inline-flex items-center border-2 border-fg px-5 py-3 text-sm font-medium text-fg transition-colors duration-200 hover:bg-fg hover:text-bg"
                       >
                         Source
                         <CodeXml className="ml-2 h-4 w-4" />

@@ -26,7 +26,7 @@ export function AboutSection() {
           {aboutContent.stats.map((stat, index) => (
             <Reveal key={stat.label} delay={index * 0.08}>
               <div className="surface-panel noise-outline p-6">
-                <p className="font-serif text-4xl text-fg sm:text-5xl">
+                <p className="font-serif text-4xl italic text-fg sm:text-5xl">
                   <Counter value={stat.value} suffix={stat.suffix} />
                 </p>
                 <p className="mt-3 text-sm leading-7 text-muted">

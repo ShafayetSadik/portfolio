@@ -48,27 +48,27 @@ export function MobileMenu({
             onClick={onClose}
           />
           <motion.div
-            className="noise-outline fixed inset-x-4 top-4 z-50 border border-border bg-surface p-6"
+            className="fixed inset-x-4 top-4 z-50 border-2 border-fg bg-bg p-6"
             initial={reduceMotion ? false : { opacity: 0, y: -24 }}
             animate={{ opacity: 1, y: 0 }}
             exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -24 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="mb-8 flex items-center justify-between">
-              <p className="font-serif text-xs italic tracking-[0.18em] text-muted">
+            <div className="mb-6 flex items-center justify-between border-b border-border pb-4">
+              <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-muted">
                 Navigation
               </p>
               <button
                 type="button"
                 onClick={onClose}
                 aria-label="Close navigation menu"
-                className="inline-flex h-10 w-10 items-center justify-center border border-border text-fg transition-colors duration-300 hover:text-accent"
+                className="inline-flex h-9 w-9 items-center justify-center border border-border text-fg transition-colors duration-200 hover:text-accent"
               >
                 <X className="h-4 w-4" />
               </button>
             </div>
 
-            <nav className="flex flex-col gap-3">
+            <nav className="flex flex-col">
               {sections.map((section) => (
                 <button
                   key={section.id}
@@ -78,9 +78,9 @@ export function MobileMenu({
                     onClose();
                   }}
                   className={cn(
-                    "surface-panel px-4 py-4 text-left text-lg transition-colors duration-300",
+                    "border-b border-border py-4 text-left text-base transition-colors duration-200",
                     activeSection === section.id
-                      ? "text-accent"
+                      ? "font-semibold text-accent"
                       : "text-fg hover:text-accent",
                   )}
                 >
@@ -91,7 +91,7 @@ export function MobileMenu({
 
             <a
               href={`mailto:${email}`}
-              className="mt-8 inline-flex items-center gap-2 border border-border px-4 py-3 text-sm text-fg transition-colors duration-300 hover:text-accent"
+              className="mt-6 inline-flex items-center gap-2 text-sm text-muted transition-colors duration-200 hover:text-fg"
             >
               <Mail className="h-4 w-4" />
               {email}

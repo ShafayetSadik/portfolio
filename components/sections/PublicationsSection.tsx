@@ -15,19 +15,19 @@ export function PublicationsSection() {
           <Reveal key={publication.title} delay={index * 0.06}>
             <article className="surface-panel noise-outline flex h-full flex-col justify-between p-6 sm:p-8">
               <div>
-                <p className="font-serif text-xs italic tracking-[0.18em] text-muted">
+                <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-accent">
                   Publication
                 </p>
-                <h3 className="mt-4 font-serif text-2xl leading-snug text-fg">
+                <h3 className="mt-4 font-serif text-2xl italic leading-snug text-fg">
                   {publication.title}
                 </h3>
               </div>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <span className="border border-border px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+              <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-border pt-5">
+                <span className="border border-border px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
                   {publication.venue}
                 </span>
                 {publication.status ? (
-                  <span className="bg-accent px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-bg">
+                  <span className="bg-accent px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-bg">
                     {publication.status}
                   </span>
                 ) : null}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Courier_Prime, Lora, Playfair_Display } from "next/font/google";
+import { IBM_Plex_Mono, Inter, Playfair_Display } from "next/font/google";
 import { ThemeCustomizer } from "@/components/theme/ThemeCustomizer";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { siteConfig } from "@/content/site";
@@ -7,24 +7,23 @@ import { defaultTheme, THEME_STORAGE_KEY } from "@/content/theme";
 import { themeTokens } from "@/lib/types";
 import "./globals.css";
 
-const bodyFont = Lora({
+const bodyFont = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const displayFont = Playfair_Display({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
 });
 
-const monoFont = Courier_Prime({
+const monoFont = IBM_Plex_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {

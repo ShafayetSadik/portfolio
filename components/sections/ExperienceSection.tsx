@@ -22,14 +22,16 @@ export function ExperienceSection() {
                 />
               </div>
               <div className="surface-panel noise-outline p-6 sm:p-8">
-                <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                <div className="flex flex-col gap-3 border-b border-border pb-5 md:flex-row md:items-start md:justify-between">
                   <div>
-                    <p className="font-serif text-2xl text-fg">{item.role}</p>
+                    <p className="font-serif text-2xl italic text-fg">
+                      {item.role}
+                    </p>
                     <p className="mt-2 text-base text-muted">
                       {item.company} · {item.location}
                     </p>
                   </div>
-                  <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
                     {item.period}
                   </p>
                 </div>
@@ -42,7 +44,7 @@ export function ExperienceSection() {
                   {item.highlights.map((highlight) => (
                     <li key={highlight} className="flex gap-3">
                       <span
-                        className="mt-3 h-px w-5 bg-accent"
+                        className="mt-3 h-px w-4 flex-shrink-0 bg-accent"
                         aria-hidden="true"
                       />
                       <span>{highlight}</span>
@@ -50,7 +52,7 @@ export function ExperienceSection() {
                   ))}
                 </ul>
 
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-6 flex flex-wrap gap-2 border-t border-border pt-5">
                   {item.stack.map((tool) => (
                     <Tag key={`${item.company}-${tool}`}>{tool}</Tag>
                   ))}
