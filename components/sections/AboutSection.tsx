@@ -25,11 +25,11 @@ export function AboutSection() {
         <div className="grid gap-3 sm:grid-cols-2">
           {aboutContent.stats.map((stat, index) => (
             <Reveal key={stat.label} delay={index * 0.08}>
-              <div className="surface-panel noise-outline rounded-2xl p-6">
-                <p className="text-3xl font-bold text-fg sm:text-4xl">
+              <div className="card rounded-2xl p-6">
+                <p className="bg-gradient-to-br from-fg to-fg/50 bg-clip-text text-4xl font-bold text-transparent sm:text-5xl">
                   <Counter value={stat.value} suffix={stat.suffix} />
                 </p>
-                <p className="mt-2 text-sm text-muted">{stat.label}</p>
+                <p className="mt-3 text-sm leading-6 text-muted">{stat.label}</p>
               </div>
             </Reveal>
           ))}

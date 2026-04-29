@@ -113,4 +113,45 @@ html {
       0 8px 32px -4px color-mix(in srgb, var(--accent) 10%, transparent),
       0 4px 16px -4px rgba(0, 0, 0, 0.4);
   }
+
+  .card {
+    position: relative;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--surface) 65%, transparent);
+    border: 1px solid color-mix(in srgb, var(--border) 65%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    inset-x: 0;
+    top: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      color-mix(in srgb, var(--accent) 80%, transparent) 50%,
+      transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .card:hover {
+    border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--accent) 10%, transparent),
+      0 0 48px -8px color-mix(in srgb, var(--accent) 18%, transparent),
+      0 16px 48px -12px rgba(0, 0, 0, 0.6);
+  }
 }

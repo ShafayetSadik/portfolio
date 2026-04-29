@@ -17,12 +17,12 @@ export function ContactSection() {
       title={siteConfig.contact.title}
       intro={siteConfig.contact.intro}
     >
-      <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr]">
-        <div className="surface-panel noise-outline rounded-2xl p-6 sm:p-8">
-          <p className="text-base leading-7 text-fg">
+      <div className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
+        <div className="card rounded-2xl p-6 sm:p-8">
+          <p className="text-base font-medium text-fg">
             {siteConfig.contact.availability}
           </p>
-          <p className="mt-4 max-w-lg text-sm leading-7 text-muted">
+          <p className="mt-3 max-w-lg text-sm leading-7 text-muted">
             {siteConfig.contact.note}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -56,18 +56,20 @@ export function ContactSection() {
                 href={social.href}
                 target={social.icon === "mail" ? undefined : "_blank"}
                 rel={social.icon === "mail" ? undefined : "noreferrer"}
-                className="surface-panel noise-outline flex items-center justify-between rounded-2xl px-5 py-4 transition-colors duration-200 hover:border-border"
+                className="card flex items-center justify-between rounded-2xl px-5 py-4 transition-colors duration-200"
               >
-                <span className="inline-flex items-center gap-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent/10">
+                <span className="inline-flex items-center gap-3.5">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-accent/10">
                     <Icon className="h-4 w-4 text-accent" />
                   </span>
                   <span>
                     <span className="block text-xs text-muted">{social.label}</span>
-                    <span className="mt-0.5 block text-sm font-medium text-fg">{social.value}</span>
+                    <span className="mt-0.5 block text-sm font-medium text-fg">
+                      {social.value}
+                    </span>
                   </span>
                 </span>
-                <ArrowUpRight className="h-4 w-4 text-muted" />
+                <ArrowUpRight className="h-4 w-4 shrink-0 text-muted" />
               </a>
             );
           })}

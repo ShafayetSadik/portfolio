@@ -6,8 +6,7 @@ export const aboutContent: AboutContent = {
   intro:
     "My work sits at the intersection of electrical engineering, autonomous robots, embedded systems, and applied machine learning.",
   body: [
-    "I completed my BSc in Electrical and Electronic Engineering at Islamic University of Technology with a CGPA of 3.64. My thesis focused on triplet-loss-driven contrastive autoencoding for anomaly-based handover prediction using drive-test data in dynamic cellular environments.",
-    "Professionally, I work on drone light show systems, surveillance drones, agricultural mapping, custom payload platforms, GPS-denied systems, thermal image processing, and PCB development. I care about turning research and prototypes into systems that survive real field constraints.",
+    "I completed my BSc in Electrical and Electronic Engineering at Islamic University of Technology",
   ],
   stats: [
     { value: 3, suffix: "+", label: "Years in robotics and embedded systems" },

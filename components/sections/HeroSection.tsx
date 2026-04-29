@@ -59,7 +59,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        <aside className="surface-panel noise-outline rounded-2xl p-6 sm:p-8">
+        <aside className="card rounded-2xl p-6 sm:p-8">
           <span className="inline-flex items-center rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
             Availability
           </span>
