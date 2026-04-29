@@ -4,7 +4,7 @@ import { siteConfig } from "@/content/site";
 import { cn } from "@/lib/utils";
 
 const ctaClassName =
-  "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm transition-colors duration-300";
+  "inline-flex items-center justify-center px-5 py-3 text-sm transition-colors duration-300";
 
 const socialIcons = {
   github: CodeXml,
@@ -40,7 +40,7 @@ export function HeroSection() {
                 className={cn(
                   ctaClassName,
                   cta.variant === "primary"
-                    ? "bg-accent text-bg hover:bg-fg"
+                    ? "bg-accent text-bg hover:bg-fg hover:text-bg"
                     : "border border-border text-fg hover:text-accent",
                 )}
               >
@@ -54,7 +54,7 @@ export function HeroSection() {
             {siteConfig.hero.highlights.map((highlight) => (
               <span
                 key={highlight}
-                className="rounded-full border border-border px-4 py-2 font-mono text-xs uppercase tracking-[0.18em] text-muted"
+                className="border border-border px-4 py-2 font-mono text-xs uppercase tracking-[0.18em] text-muted"
               >
                 {highlight}
               </span>
@@ -62,14 +62,14 @@ export function HeroSection() {
           </div>
         </div>
 
-        <aside className="surface-panel noise-outline rounded-[2rem] p-6 sm:p-8">
-          <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted">
+        <aside className="surface-panel noise-outline p-6 sm:p-8">
+          <p className="font-serif text-xs italic tracking-[0.18em] text-muted">
             Availability
           </p>
           <p className="mt-4 text-lg leading-8 text-fg">
             {siteConfig.hero.availability}
           </p>
-          <div className="mt-8 space-y-4">
+          <div className="mt-8 space-y-3">
             {siteConfig.socials.map((social) => {
               const Icon = socialIcons[social.icon];
 
@@ -79,7 +79,7 @@ export function HeroSection() {
                   href={social.href}
                   target={social.icon === "mail" ? undefined : "_blank"}
                   rel={social.icon === "mail" ? undefined : "noreferrer"}
-                  className="flex items-center justify-between rounded-2xl border border-border px-4 py-4 text-sm text-fg transition-colors duration-300 hover:text-accent"
+                  className="flex items-center justify-between border border-border px-4 py-4 text-sm text-fg transition-colors duration-300 hover:text-accent"
                 >
                   <span className="inline-flex items-center gap-3">
                     <Icon className="h-4 w-4" />

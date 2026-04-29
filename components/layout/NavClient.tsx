@@ -45,26 +45,26 @@ export function NavClient({ name, email, sections }: NavClientProps) {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-40 px-4 pt-4 sm:px-6">
-        <div className="bg-bg/80 mx-auto flex max-w-content items-center justify-between rounded-full border border-border px-4 py-3 backdrop-blur-xl sm:px-6">
+      <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-bg/90 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4 sm:px-8">
           <button
             type="button"
             onClick={() => scrollToSection("hero")}
-            className="font-mono text-xs uppercase tracking-[0.28em] text-fg transition-colors duration-300 hover:text-accent"
+            className="font-serif italic text-sm tracking-[0.12em] text-fg transition-colors duration-300 hover:text-accent"
           >
             {name}
           </button>
 
-          <nav className="hidden items-center gap-2 md:flex">
+          <nav className="hidden items-center gap-1 md:flex">
             {sections.map((section) => (
               <button
                 key={section.id}
                 type="button"
                 onClick={() => scrollToSection(section.id)}
                 className={cn(
-                  "rounded-full px-4 py-2 text-sm transition-colors duration-300",
+                  "px-4 py-2 text-sm transition-colors duration-300",
                   activeSection === section.id
-                    ? "bg-surface text-accent"
+                    ? "text-accent underline underline-offset-4 decoration-accent/60"
                     : "text-muted hover:text-fg",
                 )}
               >
@@ -76,7 +76,7 @@ export function NavClient({ name, email, sections }: NavClientProps) {
           <div className="hidden md:block">
             <a
               href={`mailto:${email}`}
-              className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-fg transition-colors duration-300 hover:text-accent"
+              className="inline-flex items-center gap-2 border border-border px-4 py-2 text-sm text-fg transition-colors duration-300 hover:text-accent"
             >
               <Mail className="h-4 w-4" />
               {email}
@@ -85,7 +85,7 @@ export function NavClient({ name, email, sections }: NavClientProps) {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border text-fg transition-colors duration-300 hover:text-accent md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center border border-border text-fg transition-colors duration-300 hover:text-accent md:hidden"
             aria-label="Open navigation menu"
             onClick={() => setMenuOpen(true)}
           >

@@ -36,7 +36,7 @@ export function SectionShell({
     >
       <div className="mx-auto flex max-w-content flex-col gap-10">
         <div className="flex max-w-3xl flex-col gap-5">
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted">
+          <p className="font-serif text-xs italic tracking-[0.18em] text-muted">
             {label}
           </p>
           <Heading
@@ -47,7 +47,14 @@ export function SectionShell({
           >
             {title}
           </Heading>
-          <span className="accent-divider h-px w-16" aria-hidden="true" />
+          <div
+            className="flex items-center gap-2"
+            aria-hidden="true"
+          >
+            <span className="accent-divider h-px w-10" />
+            <span className="text-[8px] text-accent">◆</span>
+            <span className="accent-divider h-px w-10" />
+          </div>
           {intro ? (
             <p className="max-w-2xl text-base leading-8 text-muted sm:text-lg">
               {intro}

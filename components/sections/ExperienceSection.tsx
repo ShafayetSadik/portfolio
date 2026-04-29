@@ -21,7 +21,7 @@ export function ExperienceSection() {
                   aria-hidden="true"
                 />
               </div>
-              <div className="surface-panel noise-outline rounded-[2rem] p-6 sm:p-8">
+              <div className="surface-panel noise-outline p-6 sm:p-8">
                 <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                   <div>
                     <p className="font-serif text-2xl text-fg">{item.role}</p>

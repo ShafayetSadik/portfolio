@@ -40,20 +40,20 @@ export function ThemeCustomizer() {
         type="button"
         onClick={() => setOpen((current) => !current)}
         aria-label={open ? "Close theme customizer" : "Open theme customizer"}
-        className="noise-outline inline-flex h-12 w-12 items-center justify-center rounded-full border border-border bg-surface text-fg transition-colors duration-300 hover:text-accent"
+        className="noise-outline inline-flex h-12 w-12 items-center justify-center border border-border bg-surface text-fg transition-colors duration-300 hover:text-accent"
       >
         {open ? <X className="h-5 w-5" /> : <Palette className="h-5 w-5" />}
       </button>
 
       <aside
         className={cn(
-          "pointer-events-none absolute bottom-16 right-0 w-[min(20rem,calc(100vw-1.5rem))] translate-y-4 rounded-[2rem] border border-border bg-surface p-4 opacity-0 shadow-2xl transition-all duration-300 motion-reduce:transition-none sm:p-5",
+          "pointer-events-none absolute bottom-16 right-0 w-[min(20rem,calc(100vw-1.5rem))] translate-y-4 border border-border bg-surface p-4 opacity-0 shadow-2xl transition-all duration-300 motion-reduce:transition-none sm:p-5",
           "max-sm:fixed max-sm:inset-x-3 max-sm:bottom-20 max-sm:w-auto",
           open && "pointer-events-auto translate-y-0 opacity-100",
         )}
       >
         <div className="mb-4 flex items-center justify-between">
-          <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted">
+          <p className="font-serif text-xs italic tracking-[0.18em] text-muted">
             Theme
           </p>
           <span className="text-xs text-muted">
@@ -63,7 +63,7 @@ export function ThemeCustomizer() {
 
         <div className="space-y-3">
           {themeTokens.map((token) => (
-            <div key={token} className="rounded-[1.5rem] border border-border">
+            <div key={token} className="border border-border">
               <button
                 type="button"
                 onClick={() => setActiveToken(token)}
@@ -78,7 +78,7 @@ export function ThemeCustomizer() {
                   </span>
                 </span>
                 <span
-                  className="h-8 w-8 rounded-full border border-border"
+                  className="h-8 w-8 border border-border"
                   style={{ backgroundColor: theme[token] }}
                 />
               </button>
@@ -96,7 +96,7 @@ export function ThemeCustomizer() {
         </div>
 
         <div className="mt-5">
-          <p className="mb-3 font-mono text-xs uppercase tracking-[0.28em] text-muted">
+          <p className="mb-3 font-serif text-xs italic tracking-[0.18em] text-muted">
             Presets
           </p>
           <div className="grid gap-2">
@@ -105,14 +105,14 @@ export function ThemeCustomizer() {
                 key={preset.name}
                 type="button"
                 onClick={() => applyPreset(preset.theme)}
-                className="flex items-center justify-between rounded-2xl border border-border px-4 py-3 text-left text-sm text-fg transition-colors duration-300 hover:text-accent"
+                className="flex items-center justify-between border border-border px-4 py-3 text-left text-sm text-fg transition-colors duration-300 hover:text-accent"
               >
                 <span>{preset.name}</span>
                 <span className="flex gap-1">
                   {themeTokens.slice(0, 4).map((token) => (
                     <span
                       key={`${preset.name}-${token}`}
-                      className="h-3 w-3 rounded-full border border-border"
+                      className="h-3 w-3 border border-border"
                       style={{ backgroundColor: preset.theme[token] }}
                     />
                   ))}
@@ -126,7 +126,7 @@ export function ThemeCustomizer() {
           <button
             type="button"
             onClick={resetTheme}
-            className="inline-flex items-center justify-center rounded-full border border-border px-4 py-3 text-sm text-fg transition-colors duration-300 hover:text-accent"
+            className="inline-flex items-center justify-center border border-border px-4 py-3 text-sm text-fg transition-colors duration-300 hover:text-accent"
           >
             <RefreshCcw className="mr-2 h-4 w-4" />
             Reset
@@ -134,7 +134,7 @@ export function ThemeCustomizer() {
           <button
             type="button"
             onClick={handleCopy}
-            className="inline-flex items-center justify-center rounded-full bg-accent px-4 py-3 text-sm text-bg transition-colors duration-300 hover:bg-fg"
+            className="inline-flex items-center justify-center bg-accent px-4 py-3 text-sm text-bg transition-colors duration-300 hover:bg-fg hover:text-bg"
           >
             <Copy className="mr-2 h-4 w-4" />
             Copy code

@@ -48,21 +48,21 @@ export function MobileMenu({
             onClick={onClose}
           />
           <motion.div
-            className="noise-outline fixed inset-x-4 top-4 z-50 rounded-[2rem] border border-border bg-surface p-6"
+            className="noise-outline fixed inset-x-4 top-4 z-50 border border-border bg-surface p-6"
             initial={reduceMotion ? false : { opacity: 0, y: -24 }}
             animate={{ opacity: 1, y: 0 }}
             exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -24 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="mb-8 flex items-center justify-between">
-              <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted">
+              <p className="font-serif text-xs italic tracking-[0.18em] text-muted">
                 Navigation
               </p>
               <button
                 type="button"
                 onClick={onClose}
                 aria-label="Close navigation menu"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-fg transition-colors duration-300 hover:text-accent"
+                className="inline-flex h-10 w-10 items-center justify-center border border-border text-fg transition-colors duration-300 hover:text-accent"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -78,7 +78,7 @@ export function MobileMenu({
                     onClose();
                   }}
                   className={cn(
-                    "surface-panel rounded-2xl px-4 py-4 text-left text-lg transition-colors duration-300",
+                    "surface-panel px-4 py-4 text-left text-lg transition-colors duration-300",
                     activeSection === section.id
                       ? "text-accent"
                       : "text-fg hover:text-accent",
@@ -91,7 +91,7 @@ export function MobileMenu({
 
             <a
               href={`mailto:${email}`}
-              className="mt-8 inline-flex items-center gap-2 rounded-full border border-border px-4 py-3 text-sm text-fg transition-colors duration-300 hover:text-accent"
+              className="mt-8 inline-flex items-center gap-2 border border-border px-4 py-3 text-sm text-fg transition-colors duration-300 hover:text-accent"
             >
               <Mail className="h-4 w-4" />
               {email}

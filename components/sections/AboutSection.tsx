@@ -25,7 +25,7 @@ export function AboutSection() {
         <div className="grid gap-4 sm:grid-cols-2">
           {aboutContent.stats.map((stat, index) => (
             <Reveal key={stat.label} delay={index * 0.08}>
-              <div className="surface-panel noise-outline rounded-[1.75rem] p-6">
+              <div className="surface-panel noise-outline p-6">
                 <p className="font-serif text-4xl text-fg sm:text-5xl">
                   <Counter value={stat.value} suffix={stat.suffix} />
                 </p>

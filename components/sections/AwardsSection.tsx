@@ -13,7 +13,7 @@ export function AwardsSection() {
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {awardsContent.items.map((award, index) => (
           <Reveal key={`${award.title}-${award.year}`} delay={index * 0.06}>
-            <article className="surface-panel noise-outline h-full rounded-[2rem] p-6">
+            <article className="surface-panel noise-outline h-full p-6">
               <p className="font-mono text-xs uppercase tracking-[0.24em] text-accent">
                 {award.year}
               </p>

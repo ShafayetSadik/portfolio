@@ -12,23 +12,23 @@ function ProjectPreview({
   metrics: { label: string; value: string }[];
 }) {
   return (
-    <div className="surface-panel rounded-[1.75rem] p-5">
-      <div className="grid-backdrop rounded-[1.35rem] border border-border p-4">
+    <div className="surface-panel p-5">
+      <div className="grid-backdrop border border-border p-4">
         <div className="flex items-center justify-between">
           <p className="font-mono text-xs uppercase tracking-[0.24em] text-muted">
             Preview
           </p>
-          <span className="rounded-full border border-border px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
+          <span className="border border-border px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
             System
           </span>
         </div>
         <div className="mt-6 space-y-3">
-          <div className="accent-wash h-16 rounded-2xl border border-border" />
+          <div className="accent-wash h-16 border border-border" />
           <div className="grid gap-3 sm:grid-cols-3">
             {metrics.map((metric) => (
               <div
                 key={`${title}-${metric.label}`}
-                className="surface-panel rounded-2xl p-4"
+                className="surface-panel p-4"
               >
                 <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
                   {metric.label}
@@ -54,7 +54,7 @@ export function ProjectsSection() {
       <div className="space-y-6">
         {projectsContent.items.map((project, index) => (
           <Reveal key={project.id} delay={index * 0.08}>
-            <article className="surface-panel noise-outline rounded-[2rem] p-6 sm:p-8">
+            <article className="surface-panel noise-outline p-6 sm:p-8">
               <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
                 <div>
                   <div className="flex flex-wrap items-center gap-3">
@@ -85,7 +85,7 @@ export function ProjectsSection() {
                         href={project.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center rounded-full bg-accent px-5 py-3 text-sm text-bg transition-colors duration-300 hover:bg-fg"
+                        className="inline-flex items-center bg-accent px-5 py-3 text-sm text-bg transition-colors duration-300 hover:bg-fg hover:text-bg"
                       >
                         Visit project
                         <ArrowUpRight className="ml-2 h-4 w-4" />
@@ -96,7 +96,7 @@ export function ProjectsSection() {
                         href={project.repository}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center rounded-full border border-border px-5 py-3 text-sm text-fg transition-colors duration-300 hover:text-accent"
+                        className="inline-flex items-center border border-border px-5 py-3 text-sm text-fg transition-colors duration-300 hover:text-accent"
                       >
                         Source
                         <CodeXml className="ml-2 h-4 w-4" />

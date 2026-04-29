@@ -18,8 +18,8 @@ export function ContactSection() {
       intro={siteConfig.contact.intro}
     >
       <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr]">
-        <div className="surface-panel noise-outline rounded-[2rem] p-6 sm:p-8">
-          <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted">
+        <div className="surface-panel noise-outline p-6 sm:p-8">
+          <p className="font-serif text-xs italic tracking-[0.18em] text-muted">
             Availability
           </p>
           <p className="mt-4 text-lg leading-8 text-fg">
@@ -37,9 +37,9 @@ export function ContactSection() {
                 target={cta.external ? "_blank" : undefined}
                 rel={cta.external ? "noreferrer" : undefined}
                 className={cn(
-                  "inline-flex items-center rounded-full px-5 py-3 text-sm transition-colors duration-300",
+                  "inline-flex items-center px-5 py-3 text-sm transition-colors duration-300",
                   cta.variant === "primary"
-                    ? "bg-accent text-bg hover:bg-fg"
+                    ? "bg-accent text-bg hover:bg-fg hover:text-bg"
                     : "border border-border text-fg hover:text-accent",
                 )}
               >
@@ -60,7 +60,7 @@ export function ContactSection() {
                 href={social.href}
                 target={social.icon === "mail" ? undefined : "_blank"}
                 rel={social.icon === "mail" ? undefined : "noreferrer"}
-                className="surface-panel noise-outline flex items-center justify-between rounded-[1.5rem] px-5 py-5 transition-colors duration-300 hover:text-accent"
+                className="surface-panel noise-outline flex items-center justify-between px-5 py-5 transition-colors duration-300 hover:text-accent"
               >
                 <span className="inline-flex items-center gap-3">
                   <Icon className="h-5 w-5" />
