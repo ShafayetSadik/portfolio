@@ -40,28 +40,28 @@ export function ThemeCustomizer() {
         type="button"
         onClick={() => setOpen((current) => !current)}
         aria-label={open ? "Close theme customizer" : "Open theme customizer"}
-        className="inline-flex h-12 w-12 items-center justify-center border-2 border-fg bg-bg text-fg transition-colors duration-200 hover:bg-fg hover:text-bg"
+        className="inline-flex h-10 w-10 items-center justify-center border border-border bg-bg text-muted transition-colors duration-200 hover:text-fg"
       >
-        {open ? <X className="h-5 w-5" /> : <Palette className="h-5 w-5" />}
+        {open ? <X className="h-4 w-4" /> : <Palette className="h-4 w-4" />}
       </button>
 
       <aside
         className={cn(
-          "pointer-events-none absolute bottom-16 right-0 w-[min(20rem,calc(100vw-1.5rem))] translate-y-4 border-2 border-fg bg-bg p-4 opacity-0 shadow-[4px_4px_0_var(--fg)] transition-all duration-300 motion-reduce:transition-none sm:p-5",
-          "max-sm:fixed max-sm:inset-x-3 max-sm:bottom-20 max-sm:w-auto",
+          "pointer-events-none absolute bottom-14 right-0 w-[min(20rem,calc(100vw-1.5rem))] translate-y-3 border border-border bg-bg p-5 opacity-0 transition-all duration-200 motion-reduce:transition-none",
+          "max-sm:fixed max-sm:inset-x-3 max-sm:bottom-16 max-sm:w-auto",
           open && "pointer-events-auto translate-y-0 opacity-100",
         )}
       >
-        <div className="mb-4 flex items-center justify-between border-b border-border pb-3">
-          <p className="text-[10px] font-medium uppercase tracking-[0.35em] text-muted">
+        <div className="mb-5 flex items-center justify-between">
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-muted">
             Theme
           </p>
-          <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
+          <span className="font-mono text-xs text-muted">
             {copied ? "Copied" : "Live"}
           </span>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-1">
           {themeTokens.map((token) => (
             <div key={token} className="border border-border">
               <button
@@ -73,12 +73,12 @@ export function ThemeCustomizer() {
                   <span className="block text-sm text-fg">
                     {tokenLabels[token]}
                   </span>
-                  <span className="block font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
+                  <span className="block font-mono text-[10px] text-muted">
                     {theme[token]}
                   </span>
                 </span>
                 <span
-                  className="h-7 w-7 border border-border"
+                  className="h-6 w-6 border border-border"
                   style={{ backgroundColor: theme[token] }}
                 />
               </button>
@@ -96,16 +96,16 @@ export function ThemeCustomizer() {
         </div>
 
         <div className="mt-5">
-          <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.35em] text-muted">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-muted">
             Presets
           </p>
-          <div className="grid gap-1">
+          <div className="space-y-1">
             {presets.map((preset) => (
               <button
                 key={preset.name}
                 type="button"
                 onClick={() => applyPreset(preset.theme)}
-                className="flex items-center justify-between border border-border px-4 py-3 text-left text-sm text-fg transition-colors duration-200 hover:bg-surface"
+                className="flex w-full items-center justify-between border border-border px-4 py-3 text-sm text-fg transition-colors duration-200 hover:bg-surface"
               >
                 <span>{preset.name}</span>
                 <span className="flex gap-1">
@@ -126,18 +126,18 @@ export function ThemeCustomizer() {
           <button
             type="button"
             onClick={resetTheme}
-            className="inline-flex items-center justify-center border-2 border-fg px-4 py-3 text-sm text-fg transition-colors duration-200 hover:bg-fg hover:text-bg"
+            className="inline-flex items-center justify-center border border-border px-4 py-2.5 text-sm text-muted transition-colors duration-200 hover:text-fg"
           >
-            <RefreshCcw className="mr-2 h-4 w-4" />
+            <RefreshCcw className="mr-2 h-3.5 w-3.5" />
             Reset
           </button>
           <button
             type="button"
             onClick={handleCopy}
-            className="inline-flex items-center justify-center bg-accent px-4 py-3 text-sm font-medium text-bg transition-colors duration-200 hover:bg-fg"
+            className="inline-flex items-center justify-center bg-fg px-4 py-2.5 text-sm text-bg transition-opacity duration-200 hover:opacity-70"
           >
-            <Copy className="mr-2 h-4 w-4" />
-            Copy code
+            <Copy className="mr-2 h-3.5 w-3.5" />
+            Copy
           </button>
         </div>
       </aside>

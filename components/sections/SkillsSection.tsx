@@ -11,19 +11,13 @@ export function SkillsSection() {
       title={skillsContent.title}
       intro={skillsContent.intro}
     >
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div className="grid gap-4 lg:grid-cols-2">
         {skillsContent.groups.map((group, index) => (
           <Reveal key={group.title} delay={index * 0.08}>
-            <article className="surface-panel noise-outline p-6 sm:p-8">
-              <div className="mb-6 border-b border-border pb-6">
-                <h3 className="font-serif text-2xl italic text-fg">
-                  {group.title}
-                </h3>
-                <p className="mt-3 max-w-lg text-sm leading-7 text-muted">
-                  {group.summary}
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2">
+            <article className="surface-panel p-6 sm:p-8">
+              <h3 className="text-base font-semibold text-fg">{group.title}</h3>
+              <p className="mt-2 text-sm leading-7 text-muted">{group.summary}</p>
+              <div className="mt-5 flex flex-wrap gap-1.5">
                 {group.items.map((item) => (
                   <Tag key={item}>{item}</Tag>
                 ))}

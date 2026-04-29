@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Inter, Playfair_Display } from "next/font/google";
+import { IBM_Plex_Mono, Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { ThemeCustomizer } from "@/components/theme/ThemeCustomizer";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { siteConfig } from "@/content/site";
@@ -13,11 +13,10 @@ const bodyFont = Inter({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const displayFont = Playfair_Display({
+const displayFont = Plus_Jakarta_Sans({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
+  weight: ["300", "400", "500", "600"],
 });
 
 const monoFont = IBM_Plex_Mono({

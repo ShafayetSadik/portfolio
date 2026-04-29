@@ -9,7 +9,7 @@ export function Tag({ children, className }: TagProps) {
   return (
     <span
       className={cn(
-        "border border-border px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-muted",
+        "bg-surface px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted",
         className,
       )}
     >
